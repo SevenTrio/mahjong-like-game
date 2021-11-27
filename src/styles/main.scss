@@ -1,0 +1,12 @@
+@import "reset";
+@import "config";
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: $black;
+  background-color: $white;
+}
