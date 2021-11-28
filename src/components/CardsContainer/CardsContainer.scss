@@ -1,0 +1,19 @@
+@import "../../styles/config";
+
+$cards-per-line: 10;
+$cards-per-line_md: 6;
+$cards-per-line_sm: 3;
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(#{$cards-per-line}, #{$card-size});
+  gap: 16px;
+
+  @media screen and (max-width: $md){
+    grid-template-columns: repeat(#{$cards-per-line_md}, #{$card-size});
+  }
+
+  @media screen and (max-width: $sm){
+    grid-template-columns: repeat(#{$cards-per-line_sm}, #{$card-size});
+  }
+}
