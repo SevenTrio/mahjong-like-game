@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/mahjong-like-game/static/css/main.650034f0.chunk.css",
+    "main.js": "/mahjong-like-game/static/js/main.13875d2e.chunk.js",
+    "main.js.map": "/mahjong-like-game/static/js/main.13875d2e.chunk.js.map",
+    "runtime-main.js": "/mahjong-like-game/static/js/runtime-main.8df4187c.js",
+    "runtime-main.js.map": "/mahjong-like-game/static/js/runtime-main.8df4187c.js.map",
+    "static/js/2.3439843c.chunk.js": "/mahjong-like-game/static/js/2.3439843c.chunk.js",
+    "static/js/2.3439843c.chunk.js.map": "/mahjong-like-game/static/js/2.3439843c.chunk.js.map",
+    "index.html": "/mahjong-like-game/index.html",
+    "static/css/main.650034f0.chunk.css.map": "/mahjong-like-game/static/css/main.650034f0.chunk.css.map",
+    "static/js/2.3439843c.chunk.js.LICENSE.txt": "/mahjong-like-game/static/js/2.3439843c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8df4187c.js",
+    "static/js/2.3439843c.chunk.js",
+    "static/css/main.650034f0.chunk.css",
+    "static/js/main.13875d2e.chunk.js"
+  ]
+}
