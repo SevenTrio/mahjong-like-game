@@ -1,0 +1,15 @@
+@import "../../styles/config";
+
+.main-page {
+  &__actions {
+    margin-top: 16px;
+  }
+
+  &__button {
+    min-width: 120px;
+
+    @media screen and (max-width: $sm) {
+      min-width: 104px;
+    }
+  }
+}
