@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from 'redux/store';
 import { ICard } from 'types/card';
 
 interface ICardsState {
@@ -84,6 +85,28 @@ const cardsGameSlice = createSlice({
     },
   },
 });
+
+export const selectCardWithDelayedDeselect = createAsyncThunk<
+  void,
+  ICard['id'],
+  { state: RootState }
+>(
+  'cardsGame/selectCardWithDelayedDeselect',
+  (cardId, { dispatch, getState }) => {
+    const { activeCards } = getState().cardsGame;
+
+    if (activeCards.length === 1) {
+      setTimeout(() => {
+        activeCards.forEach((card) => {
+          dispatch(cardsGameSlice.actions.deselectCard(card.id));
+        });
+        dispatch(cardsGameSlice.actions.deselectCard(cardId));
+      }, 750);
+    }
+
+    dispatch(cardsGameSlice.actions.selectCard(cardId));
+  },
+);
 
 export const { setupGame, startGame, selectCard, deselectCard } =
   cardsGameSlice.actions;

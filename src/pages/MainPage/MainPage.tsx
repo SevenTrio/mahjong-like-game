@@ -11,7 +11,7 @@ import {
 import {
   setupGame,
   startGame,
-  selectCard,
+  selectCardWithDelayedDeselect,
 } from 'redux/features/cardsGame/cardsGameSlice';
 import MainLayout from 'layouts/MainLayout/MainLayout';
 import CardsContainer from 'components/CardsContainer/CardsContainer';
@@ -47,7 +47,7 @@ const App: React.FC = () => {
     const isSelectable = !selectedCard.isGuessed && !isActive(selectedCard.id);
     if (!isSelectable || !gameInProgress) return;
 
-    dispatch(selectCard(selectedCard.id));
+    dispatch(selectCardWithDelayedDeselect(selectedCard.id));
   };
 
   return (
