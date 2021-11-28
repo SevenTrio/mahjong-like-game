@@ -1,21 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface ICard {
-  id: string;
-  number: number;
-  isGuessed?: boolean;
-}
+import { ICard } from 'types/card';
 
 interface ICardsState {
   cards: ICard[];
   activeCards: ICard[];
-  showAllCards: boolean;
+  gameInProgress: boolean;
 }
 
 const initialState: ICardsState = {
   cards: [],
   activeCards: [],
-  showAllCards: false,
+  gameInProgress: false,
 };
 
 const cardsGameSlice = createSlice({
@@ -26,15 +21,14 @@ const cardsGameSlice = createSlice({
       const addedCards = [...action.payload];
 
       return {
-        ...state,
+        ...initialState,
         cards: addedCards,
-        showAllCards: true,
       };
     },
     startGame(state: ICardsState) {
       return {
         ...state,
-        showAllCards: false,
+        gameInProgress: true,
       };
     },
     selectCard(state: ICardsState, action: PayloadAction<ICard['id']>) {
